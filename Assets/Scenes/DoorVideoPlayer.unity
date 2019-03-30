@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 470660578}
   - component: {fileID: 470660577}
   - component: {fileID: 470660576}
+  - component: {fileID: 470660581}
   m_Layer: 0
   m_Name: VideoPlayer
   m_TagString: Untagged
@@ -181,7 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -242,6 +243,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &470660581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470660575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18cbb926c4aa4e3c9655081dc4b8356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &613104729
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,7 +298,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0.019607844}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -353,9 +366,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2082231148}
-  - component: {fileID: 2082231147}
-  - component: {fileID: 2082231149}
   - component: {fileID: 2082231150}
+  - component: {fileID: 2082231149}
+  - component: {fileID: 2082231147}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -372,7 +385,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2082231146}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18cbb926c4aa4e3c9655081dc4b8356, type: 3}
+  m_Script: {fileID: 11500000, guid: 1905c7beaefb843c0b071f1ec138b001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &2082231148

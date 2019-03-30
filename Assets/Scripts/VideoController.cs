@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Video;
 public class VideoController : MonoBehaviour
 {
     private VideoPlayer vp;
+    private RawImage rawImage;
     private string[] videoList;
     private int lastVideo = -1;
 
@@ -13,6 +15,7 @@ public class VideoController : MonoBehaviour
     void Start()
     {
         vp = GetComponent<VideoPlayer>();
+        rawImage = GetComponent<RawImage>();
         videoList = getVideoFiles();
     }
 
@@ -45,7 +48,11 @@ public class VideoController : MonoBehaviour
 
         vp.url = videoList[nextVideo];
         vp.Play();
+        lastVideo = nextVideo;
+    }
 
-        Debug.Log("play:" + vp.url);
+    public void StopVideo(){
+        vp.url = Application.streamingAssetsPath + "/videos/alpha.webm";
+        vp.Play();
     }
 }

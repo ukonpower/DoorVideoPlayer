@@ -11,9 +11,13 @@ public class SystemController : MonoBehaviour
     void Start()
     {
         vc = GameObject.Find("VideoPlayer").GetComponent<VideoController>();
+        
         door = GetComponent<Door>();
         door.onOpen += () => {
             vc.PlayVideo();
+        };
+        door.onClose += () =>{
+            vc.StopVideo();
         };
     }
 
