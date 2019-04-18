@@ -5,10 +5,8 @@ using System;
 
 public class Door : MonoBehaviour
 {
-    public int levelOpen = 30;
-    public int levelClose = 100;
-    
-
+    public float levelOpen = 0.9f;
+    public float levelClose = 0.2f;
     public GameObject leap;
 
     public event Action onClose;
@@ -26,7 +24,9 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int depth = 255 - leapImage.GetDepth();
+        float depth = 255.0f - leapImage.GetDepth();
+        depth /= 255.0f;
+        
         if(isOpen){
             if(depth < levelClose){
                 Close();

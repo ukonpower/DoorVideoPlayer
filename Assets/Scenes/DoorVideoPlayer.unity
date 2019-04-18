@@ -414,8 +414,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b124262a02cb4ef48ad746b3e03472e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelOpen: 200
-  levelClose: 120
+  levelOpen: 0.95
+  levelClose: 0.3
   leap: {fileID: 613104729}
 --- !u!114 &2082231150
 MonoBehaviour:

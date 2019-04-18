@@ -62,7 +62,7 @@ public class LeapImageRetriever : MonoBehaviour {
     private Texture2D _distortion = null;
     private Color32[] _distortionPixels = null;
 
-    private int depth = 0;
+    private float depth = 0.0f;
 
     public static void registerImageBasedMaterial(LeapImageBasedMaterial imageBasedMaterial) {
         _registeredImageBasedMaterials.Add(imageBasedMaterial);
@@ -249,8 +249,15 @@ public class LeapImageRetriever : MonoBehaviour {
             }
             return;
         }
+        
+        this.depth = 0.0f;
+        this.depth += (float)referenceImage.Data[320];
+        this.depth += (float)referenceImage.Data[320 + 240];
+        this.depth += (float)referenceImage.Data[320 + 120];
+        this.depth += (float)referenceImage.Data[320 + 3120];
+        this.depth += (float)referenceImage.Data[320 + 6720];
+        this.depth /= 5.0f;
 
-        this.depth = referenceImage.Data[0];
 
         if (referenceImage.Height != _currentHeight || referenceImage.Width != _currentWidth || referenceImage.Format != _currentFormat) {
             initMainTexture(referenceImage);
@@ -282,7 +289,7 @@ public class LeapImageRetriever : MonoBehaviour {
         }
     }
 
-    public int GetDepth(){
+    public float GetDepth(){
         return this.depth;
     }
 }
