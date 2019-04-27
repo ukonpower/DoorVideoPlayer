@@ -415,7 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelOpen: 0.95
-  levelClose: 0.3
+  levelClose: 0.6
   leap: {fileID: 613104729}
 --- !u!114 &2082231150
 MonoBehaviour:
