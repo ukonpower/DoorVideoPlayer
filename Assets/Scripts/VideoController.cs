@@ -8,8 +8,9 @@ public class VideoController : MonoBehaviour
 {
     private VideoPlayer vp;
     private RawImage rawImage;
-    private string[] videoList;
+  　  private string[] videoList;
     private int lastVideo = -1;
+    private int cNum = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -40,15 +41,11 @@ public class VideoController : MonoBehaviour
     }
 
     public void PlayVideo(){
-        int nextVideo = Random.Range(0,videoList.Length);
+        cNum = (cNum + 1) % videoList.Length;
 
-        if(nextVideo == lastVideo){
-            nextVideo = (nextVideo + 1) % videoList.Length;
-        }
-
-        vp.url = videoList[nextVideo];
+        vp.url = videoList[cNum];
         vp.Play();
-        lastVideo = nextVideo;
+        lastVideo = cNum;
     }
 
     public void StopVideo(){

@@ -46,7 +46,7 @@ public class Door : MonoBehaviour
         isOpen = true;
     }
     void Close(){
-        Debug.Log("close");
+        // Debug.Log("close");
         if(onClose != null){
             onClose();
         }
