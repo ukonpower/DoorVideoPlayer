@@ -26,6 +26,8 @@ public class Door : MonoBehaviour
     {
         float depth = 255.0f - leapImage.GetDepth();
         depth /= 255.0f;
+
+        Debug.Log( depth );
         
         if(isOpen){
             if(depth < levelClose){
